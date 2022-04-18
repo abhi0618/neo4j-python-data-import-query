@@ -1,0 +1,17 @@
+version: '3.7'
+
+# The different services that make up our "network" of containers
+services:
+    neo:
+        # The image to use
+        image: neo4j:latest
+        # map the ports so we can check the db server is up
+        
+        ports: 
+            - 7474:7474
+            - 7687:7687
+        # volumes:
+        #     - ./neo4j_data:/data/
+        env_file:
+            - .env.neo4j
+ 
